@@ -1,5 +1,5 @@
 #card {
-  background-color: #f3f2f2;
+  background-color: var(--base-card);
   border-radius: 6px 36px 6px 36px;
   width: 100%;
   max-width: 256px;
@@ -30,8 +30,8 @@
 }
 
 .tag span {
-  color: #c47f17;
-  background-color: #f1e9c9;
+  color: var(--yellow-dark);
+  background-color: var(--yellow-light);
   text-transform: uppercase;
   padding: 4px 8px;
   border-radius: 100px;
@@ -46,7 +46,7 @@ h1 {
   font-size: 20px;
   line-height: 130%;
   font-weight: 700;
-  color: #403937;
+  color: var(--base-subtitle);
   font-family: var(--baloo);
   margin-bottom: 8px;
 }
@@ -54,7 +54,7 @@ h1 {
 .description {
   font-size: 14px;
   font-weight: 400;
-  color: #8d8686;
+  color: var(--base-label);
   line-height: 130%;
   width: 100%;
   max-width: 216px;
@@ -70,7 +70,7 @@ h1 {
 .price p {
   font-size: 14px;
   line-height: 130%;
-  color: #574f4d;
+  color: var(--base-text);
 
   display: flex;
   align-items: center;
@@ -79,7 +79,7 @@ h1 {
 }
 
 .price strong {
-  color: #574f4d;
+  color: var(--base-text);
   font-family: var(--baloo);
   font-size: 24px;
   font-weight: 800;
@@ -87,7 +87,7 @@ h1 {
 }
 
 #quantityButtons {
-  background-color: #e6e5e5;
+  background-color: var(--base-button);
   border-radius: 6px;
   padding: 8.5px 8px;
   width: 100%;
@@ -103,12 +103,12 @@ h1 {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: #8047f8;
+  color: var(--purple);
   font-size: 14px;
 }
 
 .shoppingBtn {
-  background-color: #4b2995;
+  background-color: var(--purple-dark);
   padding: 8px;
   border-radius: 8px;
   border: none;
