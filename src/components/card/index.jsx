@@ -1,29 +1,38 @@
+import { ShoppingCart } from "lucide-react";
 import "./styles.css";
-import coffee from "../../../public/images/coffees/americano.png";
-import { Shoppingcart } from "lucide-react";
 
-export function Card() {
- 
+export function Card({ coffeeImg, tags, title, description }) {
   return (
-   <div id="card">
-    <img src={coffee} alt="" />
-    <span className="tag">tradicional</span>
-    <h1>Expresso Tradicional</h1>
-    <p className="description">O tradicional café com água quente e grãos moídos</p>
-    <div>
-      <p className="price">
-        R$ <strong>9,90</strong>
-      </p>
-
-      <div id="quantityButtons">
-        <button type="button">-</button>
-        <span>1</span>
-        <button type="button">+</button>
+    <div id="card">
+      <img src={coffeeImg} alt={title} id="coffeeImg" />
+      <div className="tags-container">
+        {tags.map((tag, index) => (
+          <div className="tag" key={index}>
+            <span>{tag}</span>
+          </div>
+        ))}
       </div>
-      <button type="button" className=""> </ShoppingCart ></button>
+
+      <h1>{title}</h1>
+      <p className="description">{description} </p>
+
+      <div id="details">
+        <div className="price">
+          <p>
+            R$ <strong>9,90</strong>
+          </p>
+        </div>
+
+        <div id="quantityButtons">
+          <button type="button">-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+
+        <button type="button" className="shoppingBtn">
+          <ShoppingCart color="#F3F2F2" fill="#F3F2F2" size={20} />
+        </button>
+      </div>
     </div>
-   </div>
   );
 }
-
-

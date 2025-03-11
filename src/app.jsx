@@ -1,7 +1,9 @@
 import { ShoppingCart, Timer, Package, Coffee } from "lucide-react";
 import coffeeImg from "./assets/coffee.svg";
 import { Header } from "./components/header";
-import Card from "./components/card";
+import { Card } from "./components/card";
+
+import data from "../data.json";
 
 export function App() {
   return (
@@ -14,7 +16,6 @@ export function App() {
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
           </p>
-
 
           <ul className="info-list">
             <li>
@@ -49,7 +50,18 @@ export function App() {
       <section>
         <h2>Nossos cafés</h2>
 
-        <Card/>
+        {/* COLOCAR A RENDERIZAÇÃO DOS CARDS AQUI */}
+        <div className="grid">
+          {data.coffees.map((coffe) => (
+            <Card
+              key={coffe.id}
+              coffeeImg={coffe.image}
+              tags={coffe.tags}
+              title={coffe.title}
+              description={coffe.description}
+            />
+          ))}
+        </div>
       </section>
     </>
   );
