@@ -1,46 +1,29 @@
 import "./styles.css";
-import { useState, useEffect } from "react";
+import coffee from "../../../public/images/coffees/americano.png";
+import { Shoppingcart } from "lucide-react";
 
-function Coffees() {
-  const [coffees, setCoffees] = useState([]);
-
-  useEffect(() => {
-    fetch("./data.json")
-      .then((response) => response.json())
-      .then((data) =>  setCoffees(data.coffees) );
-  }, []);
-
+export function Card() {
+ 
   return (
-    <div className="coffeeCard">
-      <img src={coffees.image} alt={coffees.description} />
+   <div id="card">
+    <img src={coffee} alt="" />
+    <span className="tag">tradicional</span>
+    <h1>Expresso Tradicional</h1>
+    <p className="description">O tradicional café com água quente e grãos moídos</p>
+    <div>
+      <p className="price">
+        R$ <strong>9,90</strong>
+      </p>
 
-      <div className="tag">
-        <p className="tag">{coffees.tags}</p>
+      <div id="quantityButtons">
+        <button type="button">-</button>
+        <span>1</span>
+        <button type="button">+</button>
       </div>
-
-      <h2>{coffees.title}</h2>
-
-      <p className="desc">{coffees.description}</p>
-
-      <div className="preco">
-        <p>
-          R$ <span>{coffees.price}</span>
-        </p>
-
-        <div className="actions">
-          <div className="counter">
-            <img src="./images/menos.png" alt="" />
-            <p>1</p>
-            <img src="./images/mais.png" alt="" />
-          </div>
-
-          <button>
-            <img src="./images/compra.png" alt="" />
-          </button>
-        </div>
-      </div>
+      <button type="button" className=""> </ShoppingCart ></button>
     </div>
+   </div>
   );
 }
 
-export default Coffees;
+
