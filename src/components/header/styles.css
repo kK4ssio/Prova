@@ -30,3 +30,9 @@ nav {
   padding: 8px;
   border-radius: 6px;
 }
+
+.flex button{
+  border: none;
+  background-color: var(--yellow-light);
+}
+

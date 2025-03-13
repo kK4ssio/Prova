@@ -1,8 +1,15 @@
 import { MapPin, ShoppingCart } from "lucide-react";
 import logo from "../../assets/logo.svg";
-
+import { useNavigate } from "react-router";
 import "./styles.css";
 export function Header() {
+  const navigate = useNavigate();
+
+  function handleNavigate() {
+    navigate("/checkout");
+    
+  }
+
   return (
     <header className="flex">
       <img src={logo} alt="" />
@@ -14,7 +21,10 @@ export function Header() {
         </div>
 
         <div id="cart" className="flex">
-          <ShoppingCart size={22} color="#C47F17" fill="#C47F17" />
+          <button onClick={() => handleNavigate()}>
+            {" "}
+            <ShoppingCart size={22} color="#C47F17" fill="#C47F17" />
+          </button>
         </div>
       </nav>
     </header>
